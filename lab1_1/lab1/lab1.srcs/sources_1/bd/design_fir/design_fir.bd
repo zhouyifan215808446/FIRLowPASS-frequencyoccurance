@@ -1,0 +1,167 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7s15ftgb196-1",
+      "name": "design_fir",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "fir_compiler_0": "",
+      "Driver_DAC_0": "",
+      "clk_wiz_0": "",
+      "Driver_ADC_0": ""
+    },
+    "ports": {
+      "clk_in1_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "DAC_Din_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "fir_compiler_0": {
+        "vlnv": "xilinx.com:ip:fir_compiler:7.2",
+        "xci_name": "design_fir_fir_compiler_0_0",
+        "parameters": {
+          "Clock_Frequency": {
+            "value": "100.0"
+          },
+          "CoefficientSource": {
+            "value": "COE_File"
+          },
+          "Coefficient_File": {
+            "value": "c:/Users/Administrator/Desktop/´óÏîÄ¿/FIR129.coe"
+          },
+          "Coefficient_Fractional_Bits": {
+            "value": "0"
+          },
+          "Coefficient_Sets": {
+            "value": "1"
+          },
+          "Coefficient_Sign": {
+            "value": "Signed"
+          },
+          "Coefficient_Structure": {
+            "value": "Inferred"
+          },
+          "Coefficient_Width": {
+            "value": "16"
+          },
+          "ColumnConfig": {
+            "value": "65"
+          },
+          "Data_Width": {
+            "value": "8"
+          },
+          "Filter_Architecture": {
+            "value": "Systolic_Multiply_Accumulate"
+          },
+          "Output_Rounding_Mode": {
+            "value": "Truncate_LSBs"
+          },
+          "Output_Width": {
+            "value": "8"
+          },
+          "Quantization": {
+            "value": "Integer_Coefficients"
+          },
+          "Sample_Frequency": {
+            "value": "100"
+          }
+        }
+      },
+      "Driver_DAC_0": {
+        "vlnv": "xilinx.com:user:Driver_DAC:1.0",
+        "xci_name": "design_fir_Driver_DAC_0_0"
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_fir_clk_wiz_0_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "151.636"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "50.000"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "183.243"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "98.575"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "20.000"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "20.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "50"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "1"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "2"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          },
+          "USE_RESET": {
+            "value": "false"
+          }
+        }
+      },
+      "Driver_ADC_0": {
+        "vlnv": "xilinx.com:user:Driver_ADC:1.0",
+        "xci_name": "design_fir_Driver_ADC_0_1"
+      }
+    },
+    "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "Driver_DAC_0/clk_DAC"
+        ]
+      },
+      "fir_compiler_0_m_axis_data_tdata": {
+        "ports": [
+          "fir_compiler_0/m_axis_data_tdata",
+          "Driver_DAC_0/DAC_Data"
+        ]
+      },
+      "Driver_DAC_0_DAC_Din": {
+        "ports": [
+          "Driver_DAC_0/DAC_Din",
+          "DAC_Din_0"
+        ]
+      },
+      "Driver_ADC_0_ADC_Data_Out": {
+        "ports": [
+          "Driver_ADC_0/ADC_Data_Out",
+          "fir_compiler_0/s_axis_data_tdata"
+        ]
+      },
+      "clk_in1_0_1": {
+        "ports": [
+          "clk_in1_0",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "Driver_ADC_0/clk_ADC"
+        ]
+      }
+    }
+  }
+}
